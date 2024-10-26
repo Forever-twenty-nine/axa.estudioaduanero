@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root[data-theme="light"] {
+        --text: #0c0e18;
+        --background: #ebeefa;
+        --primary: #3d53d1;
+        --secondary: #8a99ef;
+        --accent: #47f5c1;
+    }
+
+    :root[data-theme="dark"] {
+        --text: #e7e9f3;
+        --background: #050814;
+        --primary: #2e44c2;
+        --secondary: #101f75;
+        --accent: #0ab884;
+    }
+
+    body {
+        color: var(--text);
+        background-color: var(--background);
+    }
+}

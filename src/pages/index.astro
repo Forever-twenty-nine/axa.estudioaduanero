@@ -8,24 +8,29 @@ import Process from "../components/Process.astro";
 import FAQ from "../components/FAQ.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+import "../scripts/theme-toggle.js";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const links = [
+  { href: "#about", text: "Acerca de" },
+  { href: "#services", text: "Servicios" },
+  { href: "#testimonials", text: "Testimonios" },
+  { href: "#process", text: "Proceso" },
+  { href: "#faq", text: "Preguntas frecuentes" },
+  { href: "#contact", text: "Contacto" },
+];
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AXA - Estudio Aduanero</title>
-  </head>
-  <body class="bg-gray-50 font-sans text-gray-700">
-    <!-- header -->
-    <Hero />
-    <!-- body -->
-    <About />
-    <Services />
-    <Testimonials />
-    <Process />
-    <FAQ />
-    <Contact />
-    <Footer />
-  </body>
-</html>
+<BaseLayout title="Axa - Estudio Aduanero">
+  <Header links={links} />
+  <Hero />
+  <About />
+  <Services />
+  <Testimonials />
+  <Process />
+  <FAQ />
+  <Contact />
+  <Footer />
+</BaseLayout>

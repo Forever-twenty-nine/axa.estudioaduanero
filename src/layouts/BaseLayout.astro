@@ -1,0 +1,19 @@
+---
+import styles from "../styles/global.css";
+
+const { title } = Astro.props;
+---
+
+<html lang="es" class="background">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+        <link rel="stylesheet" href={styles} />
+    </head>
+    <body>
+        <main>
+            <slot />
+        </main>
+    </body>
+</html>

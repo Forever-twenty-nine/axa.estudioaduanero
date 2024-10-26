@@ -1,0 +1,39 @@
+---
+import ThemeToggleButton from "../shared/ThemeToggleButton.astro";
+
+interface Link {
+    href: string;
+    text: string;
+}
+
+const { links = [] }: { links?: Link[] } = Astro.props;
+---
+
+<header class="relative py-4 pt-8">
+    <div
+        class="container mx-auto flex justify-between items-center bg-primary rounded-lg shadow-lg p-6"
+    >
+        <h1 class="text-2xl font-bold text-text">FTN agency</h1>
+
+        <!-- Navegación -->
+        <nav>
+            <ul class="flex space-x-6">
+                {
+                    links.map((link) => (
+                        <li>
+                            <a
+                                href={link.href}
+                                class="text-text hover:text-accent transition duration-200"
+                            >
+                                {link.text}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+        <div class="flex space-x-4">
+            <ThemeToggleButton />
+        </div>
+    </div>
+</header>
