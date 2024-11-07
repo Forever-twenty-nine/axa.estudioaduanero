@@ -10,30 +10,50 @@ const { links = [] }: { links?: Link[] } = Astro.props;
 ---
 
 <header class="sticky top-0 w-full z-10 py-4 pt-8 bg-background">
-    <div
-        class="container mx-auto flex justify-between items-center bg-primary rounded-lg shadow-lg p-6"
-    >
-        <h1 class="text-2xl font-bold text-text">AXACOMEX</h1>
+    <div class="container mx-auto flex flex-wrap justify-between items-center bg-primary rounded-lg shadow-lg p-4 sm:p-6">
+        <!-- Logo / Título -->
+        <h1 class="text-xl sm:text-2xl font-bold text-text">AXACOMEX</h1>
+
+        <!-- Botón para menú hamburguesa en dispositivos móviles -->
+        <div class="block sm:hidden">
+            <button id="menu-toggle" class="text-text focus:outline-none">
+                <!-- Aquí puedes agregar un ícono de hamburguesa (opcional) -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
 
         <!-- Navegación -->
-        <nav>
-            <ul class="flex space-x-6">
-                {
-                    links.map((link) => (
-                        <li>
-                            <a
-                                href={link.href}
-                                class="text-text hover:text-accent transition duration-200"
-                            >
-                                {link.text}
-                            </a>
-                        </li>
-                    ))
-                }
+        <nav class="hidden sm:block">
+            <ul class="flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 mt-4 sm:mt-0">
+                {links.map((link) => (
+                    <li>
+                        <a href={link.href} class="text-text hover:text-accent transition duration-200">
+                            {link.text}
+                        </a>
+                    </li>
+                ))}
             </ul>
         </nav>
-        <div class="flex space-x-4">
+
+        <!-- Botón de tema -->
+        <div class="flex space-x-4 mt-4 sm:mt-0">
             <ThemeToggleButton />
         </div>
     </div>
 </header>
+
+<script>
+    // Script para el botón hamburguesa en dispositivos móviles
+    const menuToggle = document.getElementById("menu-toggle");
+    if (menuToggle) {
+        menuToggle.addEventListener("click", function () {
+            const nav = document.querySelector("nav");
+            if (nav) {
+                nav.classList.toggle("hidden");
+            }
+        });
+    }
+</script>
+
