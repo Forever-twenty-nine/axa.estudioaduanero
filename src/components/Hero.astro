@@ -1,5 +1,6 @@
 ---
-
+import { Image } from 'astro:assets';
+import heroImage from '../assets/hero.png';
 ---
 
 <section class="bg-gradient-to-r from-primary to-background">
@@ -46,7 +47,7 @@
 
         <!-- Imagen de apoyo (opcional) -->
         <div class="lg:mt-0 lg:col-span-5 lg:flex">
-            <img src="/axa.estudioaduanero/hero.png" alt="servicios aduaneros" />
+            <Image src={heroImage} alt="servicios aduaneros" loading="eager" />
         </div>
     </div>
 </section>

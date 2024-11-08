@@ -1,16 +1,21 @@
 ---
+import HeaderSection from "./HeaderSection.astro"
 
+const header = {
+  title: "Contáctanos",
+  subtitle: "Estamos Aquí Para Ayudarte",
+  description: "Si tienes alguna pregunta, no dudes en comunicarte con nosotros. Nuestro equipo está disponible para ayudarte y brindarte toda la información que necesites."
+}
 ---
 <section  id="contact" class="bg-background py-12">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    
-        <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-text sm:text-4xl">
-            Contáctenos
-        </p>
-        <p class="mt-4 max-w-2xl text-xl text-text mx-auto">
+        
+        <HeaderSection {...header}  />
+     
+        <p class="mt-4 max-w-2xl text-xl text-text mx-auto font-bold " >
             Alberto Aldave 
             <br>
-            Agente de transporte Aduanero - Despachante de Aduana
+            <span class="text-primary">Agente de transporte Aduanero - Despachante de Aduana</span>
         </p>
         
         <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8">

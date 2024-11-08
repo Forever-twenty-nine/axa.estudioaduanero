@@ -1,15 +1,18 @@
 ---
-
+import { Image } from 'astro:assets';
 ---
 
 <section id="about" class="bg-background">
     <div class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
             <div class="mt-12 md:mt-0">
-                <img
+                <Image 
                     src="https://images.unsplash.com/photo-1531973576160-7125cd663d86"
-                    alt="About Us Image"
+                    alt="About us"
+                    width={600}
+                    height={400}
                     class="object-cover rounded-lg shadow-md"
+                    loading="eager"
                 />
             </div>
             <div class="max-w-lg">

@@ -1,39 +1,45 @@
 ---
+import Service from "./service.astro"
+import HeaderSection from "./HeaderSection.astro"
+
+const header = {
+  title: "Servicios que ofrecemos",
+  subtitle: "Nuestros Servicios",
+  description: "Ofrecemos una amplia gama de servicios de comercio exterior para satisfacer las necesidades de nuestros clientes."
+}
+
+const services = [
+  {
+    title: "Despacho Aduanero",
+    description: "Nos ocupamos de todos los aspectos del despacho aduanero, asegurando  que sus mercancías cumplan con la normativa vigente y lleguen a destino sin retrasos ni inconvenientes.",
+    icon: "🚚"
+  },
+  {
+    title: "Asesoramiento en Comercio Exterior",
+    description: "Ofrecemos un asesoramiento integral en comercio exterior para optimizar sus procesos de importación y exportación, maximizando la eficiencia y reduciendo los costos operativos.",
+    icon: "🌍"
+  },
+  {
+    title: "Gestión de Documentación",
+    description: "Administramos y gestionamos toda la documentación necesaria, facilitando un proceso rápido y cumpliendo con los requisitos legales para importaciones y exportaciones.",
+    icon: "📄"
+  }
+]
+
 
 ---
 
-<section id="servicios" class="bg-background py-12">
-  <div class="container mx-auto px-4">
-    <h2 class="text-4xl font-bold text-center text-text mb-8">Nuestros Servicios</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <!-- Servicio 1: Despacho Aduanero -->
-      <div class="bg-primary shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300 text-text">
-        <h3 class="text-2xl font-semibold text-text mb-4">Despacho Aduanero</h3>
-        <p class="text-text">
-          Nos ocupamos de todos los aspectos del despacho aduanero, asegurando que sus mercancías cumplan con la normativa vigente y lleguen a destino sin retrasos ni inconvenientes.
-        </p>
-      </div>
-      
-      <!-- Servicio 2: Asesoramiento en Comercio Exterior -->
-      <div class="bg-primary shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300 text-text">
-        <h3 class="text-2xl font-semibold text-text mb-4">Asesoramiento en Comercio Exterior</h3>
-        <p class="text-text">
-          Ofrecemos un asesoramiento integral en comercio exterior para optimizar sus procesos de importación y exportación, maximizando la eficiencia y reduciendo los costos operativos.
-        </p>
-      </div>
-      
-      <!-- Servicio 3: Gestión de Documentación -->
-      <div class="bg-primary shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300 text-text">
-        <h3 class="text-2xl font-semibold text-text mb-4">Gestión de Documentación</h3>
-        <p class="text-text">
-          Administramos y gestionamos toda la documentación necesaria, facilitando un proceso rápido y cumpliendo con los requisitos legales para importaciones y exportaciones.
-        </p>
-      </div>
-      
+<section id="servicios" class="bg-background  py-8 sm:py-10 md:py-12">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <HeaderSection subtitle={header.subtitle} title={header.title} description={header.description} />
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 list-none">
+      {services.map((service) => (
+      <li>
+        <Service {...service} />
+      </li>
+      ))}
+    </ul>
+
     </div>
   </div>
 </section>
-
-
-

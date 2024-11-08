@@ -1,9 +1,17 @@
 ---
+import HeaderSection from "./HeaderSection.astro"
+
+const header = {
+  title: "Nuestro Proceso",
+  subtitle: "Cómo trabajamos",
+  description: "Te acompañamos en cada etapa del proceso aduanero, desde la consulta inicial hasta la gestión y seguimiento de tus trámites."}
 
 ---
 <section id="process" class="relative overflow-hidden bg-background">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <HeaderSection subtitle={header.subtitle} title={header.title} description={header.description} />
     <div class="mt-2 md:mt-0 py-12 pb-6 sm:py-16 lg:pb-24 overflow-hidden">
-        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 relative">
+        
             <div class="relative mt-12 lg:mt-20">
                 <div class="absolute inset-x-0 hidden xl:px-44 top-2 md:block md:px-20 lg:px-28">
                     <svg class="w-full" xmlns="http://www.w3.org/2000/svg" width="875" height="48" viewBox="0 0 875 48"
@@ -55,7 +63,7 @@
                         </p>
                     </div>
                 </div>
-            </div>
+            
         </div>
     </div>
   </section>

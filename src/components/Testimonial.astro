@@ -1,0 +1,40 @@
+---
+
+import { Image } from 'astro:assets';
+
+interface Props {
+    name: string;
+    role: string;
+    message: string;
+    image: string;
+} 
+const { name, role, message, image } = Astro.props;
+---
+<figure class="relative rounded-2xl bg-primary p-6 shadow-xl shadow-slate-900/10">
+
+    <blockquote class="relative">
+        <p class="text-lg tracking-tight text-text">
+            {message}
+        </p>
+    </blockquote>
+        
+    <figcaption class="relative mt-6 flex items-center justify-between border-t border-text pt-6">
+          
+        <div>
+            <div class="font-display text-base text-text">
+              {name}
+            </div>
+            <div class="text-sm text-text">{role}</div>
+        </div>
+          
+        <div class="overflow-hidden rounded-full bg-text">
+            <Image
+              alt="Foto de {name}"
+              inferSize
+              class="h-14 w-14 object-cover"
+              src={image}
+            />
+        </div>
+    </figcaption>
+</figure>
+ 
