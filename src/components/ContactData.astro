@@ -1,0 +1,30 @@
+---
+interface Props {
+    icon: string;
+    title: string;
+    description: string;
+    
+}
+
+const { icon, title, description } = Astro.props;
+---
+<div class="bg-primary p-4 rounded-xl flex flex-col items-center">
+    <div class="flex items-center justify-center h-12 w-12 mx-auto rounded-full bg-accent text-text">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d={icon}
+            ></path>
+        </svg>
+    </div>
+    <h3 class="mt-4 text-lg leading-6 font-medium text-text">{title}</h3>
+    <p class="mt-2 text-base text-text text-center">{description}</p>
+</div>

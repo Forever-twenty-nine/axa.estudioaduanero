@@ -1,45 +1,47 @@
 ---
-import Service from "./service.astro"
-import HeaderSection from "./HeaderSection.astro"
+import Service from "./service.astro";
+import HeaderSection from "./HeaderSection.astro";
 
 const header = {
   title: "Servicios que ofrecemos",
   subtitle: "Nuestros Servicios",
-  description: "Ofrecemos una amplia gama de servicios de comercio exterior para satisfacer las necesidades de nuestros clientes."
-}
+  description:
+    "Ofrecemos una amplia gama de servicios de comercio exterior para satisfacer las necesidades de nuestros clientes.",
+};
 
 const services = [
   {
     title: "Despacho Aduanero",
-    description: "Nos ocupamos de todos los aspectos del despacho aduanero, asegurando  que sus mercancías cumplan con la normativa vigente y lleguen a destino sin retrasos ni inconvenientes.",
-    icon: "🚚"
+    description:
+      "Nos ocupamos de todos los aspectos del despacho aduanero, asegurando  que sus mercancías cumplan con la normativa vigente y lleguen a destino sin retrasos ni inconvenientes.",
+    icon: "🚚",
   },
   {
     title: "Asesoramiento en Comercio Exterior",
-    description: "Ofrecemos un asesoramiento integral en comercio exterior para optimizar sus procesos de importación y exportación, maximizando la eficiencia y reduciendo los costos operativos.",
-    icon: "🌍"
+    description:
+      "Ofrecemos un asesoramiento integral en comercio exterior para optimizar sus procesos de importación y exportación, maximizando la eficiencia y reduciendo los costos operativos.",
+    icon: "🌍",
   },
   {
     title: "Gestión de Documentación",
-    description: "Administramos y gestionamos toda la documentación necesaria, facilitando un proceso rápido y cumpliendo con los requisitos legales para importaciones y exportaciones.",
-    icon: "📄"
-  }
-]
-
-
+    description:
+      "Administramos y gestionamos toda la documentación necesaria, facilitando un proceso rápido y cumpliendo con los requisitos legales para importaciones y exportaciones.",
+    icon: "📄",
+  },
+];
 ---
 
-<section id="servicios" class="bg-background  py-8 sm:py-10 md:py-12">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <HeaderSection subtitle={header.subtitle} title={header.title} description={header.description} />
-    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 list-none">
-      {services.map((service) => (
-      <li>
-        <Service {...service} />
-      </li>
-      ))}
+<section  id="testimonials" class="relative overflow-hidden p-4 flex items-center justify-center bg-slate-400">
+  <div class="container bg-white py-4 mx-auto px-4 sm:px-6 lg:px-8">
+    <HeaderSection {...header}/>
+    <ul class="bg-pink-200 py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" >
+      {
+        services.map((service) => (
+          <li>
+            <Service {...service} />
+          </li>
+        ))
+      }
     </ul>
-
-    </div>
   </div>
 </section>

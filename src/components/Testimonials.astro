@@ -1,58 +1,56 @@
 ---
-import Testimonial from './Testimonial.astro';
+import Testimonial from "./Testimonial.astro";
 
-import HeaderSection from './HeaderSection.astro';
+import HeaderSection from "./HeaderSection.astro";
 
 const header = {
   title: "Lo que dicen nuestros clientes",
   subtitle: "Testimonios",
-  description: "Estos son algunos de los comentarios que nuestros clientes han compartido sobre su experiencia con nosotros."
-}
+  description:
+    "Estos son algunos de los comentarios que nuestros clientes han compartido sobre su experiencia con nosotros.",
+};
 
 const testimonials = [
   {
     name: "Carlos Sánchez",
     role: "Empresario",
-    message: "Estoy muy contento con el servicio y los productos. La calidad es excelente y el precio inmejorable.",
-    image: "https://randomuser.me/api/portraits/men/1.jpg"
+    message:
+      "Estoy muy contento con el servicio y los productos. La calidad es excelente y el precio inmejorable.",
+    image: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   {
     name: "María Gómez",
     role: "Deportista",
-    message: "El equipo de esta estudio es muy profesional. Recomiendo sus servicios al 100%.",
-    image: "https://randomuser.me/api/portraits/women/2.jpg"
+    message:
+      "El equipo de esta estudio es muy profesional. Recomiendo sus servicios al 100%.",
+    image: "https://randomuser.me/api/portraits/women/2.jpg",
   },
   {
     name: "Luis Fernández",
     role: "Entrenador personal",
-    message: "El servicio al cliente es fantástico, y los productos son justo lo que buscaba para mi entrenamiento.",
-    image: "https://randomuser.me/api/portraits/men/3.jpg"
-  }
+    message:
+      "El servicio al cliente es fantástico, y los productos son justo lo que buscaba para mi entrenamiento.",
+    image: "https://randomuser.me/api/portraits/men/3.jpg",
+  },
 ];
 ---
 
+<section id="testimonials" class="relative overflow-hidden p-4 flex items-center justify-center bg-slate-400"
+>
+  <div class="container bg-white py-4 mx-auto px-4 sm:px-6 lg:px-8">
+    <HeaderSection {...header}/>
 
-<section id="testimonials"
-  aria-label="Lo que dicen nuestros clientes"
-  class="bg-background py-20 sm:py-32">
-
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <HeaderSection
-      subtitle={header.subtitle}
-      title={header.title}
-      description={header.description} />
-    <div class="mx-auto max-w-2xl md:text-center">
-      
-    </div>
-
-    <ul role="list"
-      class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3" >
-      {testimonials.map((testimonial) => (
-        <li>
-          <Testimonial {...testimonial} />
-        </li>
-      ))}
+    <ul
+      role="list"
+      class="mx-auto grid max-w-2xl grid-cols-1 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3"
+    >
+      {
+        testimonials.map((testimonial) => (
+          <li>
+            <Testimonial {...testimonial} />
+          </li>
+        ))
+      }
     </ul>
-    
   </div>
 </section>

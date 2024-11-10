@@ -1,5 +1,4 @@
 ---
-import ThemeToggleButton from "../shared/ThemeToggleButton.astro";
 
 interface Link {
     href: string;
@@ -36,11 +35,7 @@ const { links = [] }: { links?: Link[] } = Astro.props;
                 ))}
             </ul>
         </nav>
-
-        <!-- Botón de tema -->
-        <div class="flex space-x-4 mt-4 sm:mt-0">
-            <ThemeToggleButton />
-        </div>
+       
     </div>
 </header>
 
