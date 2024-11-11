@@ -38,15 +38,15 @@ const header = {
 <section id="contact" class="relative overflow-hidden p-4 flex items-center justify-center bg-slate-400">
   <div class="container bg-white py-4 mx-auto px-4 sm:px-6 lg:px-8">
     <HeaderSection {...header} />
-    
-    <p class="mt-4 max-w-2xl text-xl text-text text-center mx-auto font-bold">
+
+    <p class="bg-pink-300 my-4 py-4  max-w-2xl text-xl text-text text-center mx-auto font-bold">
       Alberto Aldave
       <br />
       <span class="text-primary"
         >Agente de transporte Aduanero - Despachante de Aduana</span >
     </p>
 
-    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8">
+    <div class="bg-pink-400 mt-4 py-4 px-4 grid grid-cols-1 sm:grid-cols-2 gap-8">
         {datacontact.map((contact) => (
             <ContactData {...contact} />
         ))}
