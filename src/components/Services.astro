@@ -14,27 +14,30 @@ const services = [
     title: "Despacho Aduanero",
     description:
       "Nos ocupamos de todos los aspectos del despacho aduanero, asegurando  que sus mercancías cumplan con la normativa vigente y lleguen a destino sin retrasos ni inconvenientes.",
-    icon: "🚚",
+    img: "/src/assets/1.webp",
   },
   {
     title: "Asesoramiento en Comercio Exterior",
     description:
       "Ofrecemos un asesoramiento integral en comercio exterior para optimizar sus procesos de importación y exportación, maximizando la eficiencia y reduciendo los costos operativos.",
-    icon: "🌍",
+    img: "/src/assets/2.webp",
   },
   {
     title: "Gestión de Documentación",
     description:
       "Administramos y gestionamos toda la documentación necesaria, facilitando un proceso rápido y cumpliendo con los requisitos legales para importaciones y exportaciones.",
-    icon: "📄",
+    img: "/src/assets/3.webp",
   },
 ];
 ---
 
-<section  id="services" class="relative overflow-hidden p-4 flex items-center justify-center bg-slate-400">
+<section id="services" class="bg-slate-400 pt-32 relative overflow-hidden flex items-center justify-center"
+>
   <div class="container bg-white py-4 mx-auto px-4 sm:px-6 lg:px-8">
-    <HeaderSection {...header}/>
-    <ul class="bg-pink-200 py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" >
+    <HeaderSection {...header} />
+    <ul
+      class="bg-pink-400 py-4 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center"
+    >
       {
         services.map((service) => (
           <li>

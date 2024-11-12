@@ -35,18 +35,16 @@ const header = {
 };
 ---
 
-<section id="contact" class="relative overflow-hidden p-4 flex items-center justify-center bg-slate-400">
+<section id="contact" class="relative overflow-hidden pt-32 flex items-center justify-center bg-slate-400">
   <div class="container bg-white py-4 mx-auto px-4 sm:px-6 lg:px-8">
     <HeaderSection {...header} />
 
-    <p class="bg-pink-300 my-4 py-4  max-w-2xl text-xl text-text text-center mx-auto font-bold">
-      Alberto Aldave
-      <br />
-      <span class="text-primary"
-        >Agente de transporte Aduanero - Despachante de Aduana</span >
-    </p>
+    <div class="bg-pink-400 shadow-lg rounded-lg p-6 text-center max-w-sm mx-auto">
+      <div class="text-xl font-bold text-gray-800">Alberto Aldave</div>
+      <div class="text-primary mt-2">Agente de transporte Aduanero - Despachante de Aduana</div>
+    </div>
 
-    <div class="bg-pink-400 mt-4 py-4 px-4 grid grid-cols-1 sm:grid-cols-2 gap-8">
+    <div class="bg-pink-400 mt-4 py-4 px-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
         {datacontact.map((contact) => (
             <ContactData {...contact} />
         ))}

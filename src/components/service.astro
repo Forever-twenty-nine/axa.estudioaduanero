@@ -1,21 +1,52 @@
 ---
+import { Image } from 'astro:assets';
 interface Props {
     title: string;
     description: string;
-    icon: string;
+    img: string;
 }
-const { title, description,icon } = Astro.props;
+const { title, description, img } = Astro.props;
 ---
-<div class="bg-primary shadow-lg rounded-lg p-6 pb-6 md:p-6 hover:shadow-xl 
-            transition-shadow duration-300 text-text w-full max-w-sm mx-auto h-[300px] 
-            flex items-center animate-fade-down animate-once animate-duration-[2000ms]">
-    <div class="flex flex-col items-center h-full">
-        <span class="text-4xl mb-4 flex-shrink-0">
-            {icon}
-        </span>
-        <h3 class="text-xl md:text-2xl font-semibold text-text mb-3 md:mb-4 break-words">{title}</h3>
-        <p class="text-sm md:text-base text-text break-words">
-          {description}
+
+<div
+    class="max-w-sm bg-primary border border-secondary rounded-lg shadow items-center"
+>
+        <Image
+            src={img}
+            alt={title}
+            class="rounded-t-lg"
+            width={600}
+            height={400}
+            
+        />
+    
+    <div class="p-5">
+        <a href="#contact">
+            <h5 class="mb-2 text-2xl font-bold h-16 tracking-tight text-text text-center">
+                {title}
+            </h5>
+        </a>
+        <p class="mb-3 py-4 font-normal text-text">
+            {description}
         </p>
+        <a  href="#contact"
+            class="inline-flex items-center  px-3 py-2 text-sm font-medium text-center text-text bg-primary rounded-lg hover:bg-accent focus:ring-4 focus:outline-none focus:accent "
+        >
+            Contáctanos
+            <svg
+                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+            >
+                <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+            </svg>
+        </a>
     </div>
 </div>
