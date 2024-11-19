@@ -8,17 +8,16 @@ interface Props {
 const { title, description, img } = Astro.props;
 ---
 
-<div
-    class="max-w-sm bg-primary border border-secondary rounded-lg shadow items-center"
->
-        <Image
-            src={img}
-            alt={title}
-            class="rounded-t-lg"
-            width={600}
-            height={400}
-            
-        />
+<div class="max-w-sm bg-primary border border-secondary rounded-lg shadow items-center">
+    <Image
+        src={img}
+        alt={title}
+        class="rounded-t-lg"
+        loading="lazy"
+        width="500"
+        height="200"
+
+    />
     
     <div class="p-5">
         <a href="#contact">

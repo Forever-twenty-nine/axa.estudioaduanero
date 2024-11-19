@@ -31,20 +31,16 @@ const services = [
 ];
 ---
 
-<section id="services" class="bg-slate-400 pt-32 relative overflow-hidden flex items-center justify-center"
+<section id="services" class=" pt-32 relative overflow-hidden flex items-center justify-center"
 >
-  <div class="container bg-white py-4 mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="container py-4 mx-auto px-4 sm:px-6 lg:px-8">
     <HeaderSection {...header} />
-    <ul
-      class="bg-pink-400 py-4 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center"
-    >
-      {
-        services.map((service) => (
-          <li>
-            <Service {...service} />
-          </li>
-        ))
-      }
-    </ul>
+    <div  class=" py-4 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center"  >
+      
+      {services.map(service => (
+        <Service {...service} />
+      ))}
+
+    </div>
   </div>
 </section>

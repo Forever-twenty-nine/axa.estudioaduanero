@@ -32,19 +32,17 @@ const header = {
 };
 ---
 
-<section id="faq" class="relative overflow-hidden pt-32 flex items-center justify-center bg-slate-400">
-  <div class="container bg-white py-4 mx-auto px-4 sm:px-6 lg:px-8">
+<section id="faq" class="relative overflow-hidden pt-32 flex items-center justify-center">
+  <div class="container py-4 mx-auto px-4 sm:px-6 lg:px-8">
       <HeaderSection {...header} />
     
-      <ul class=" bg-pink-200 py-4 px-4">
+      <div class="max-w-[50%] py-4 px-4 mx-auto">
        {
-         question.map((question) => (
-           <li>
+         question.map((question) => (     
              <Question {...question} />
-           </li>
          ))        
        }
-      </ul>
+      </div>
     
   </div>
 </section>
