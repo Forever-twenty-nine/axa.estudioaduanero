@@ -42,14 +42,13 @@ const { links = [] }: { links?: Link[] } = Astro.props;
 </header>
 
 <script>
-    // Script para el botón hamburguesa en dispositivos móviles
     const menuToggle = document.getElementById("menu-toggle");
-    if (menuToggle) {
-        menuToggle.addEventListener("click", function () {
-            const nav = document.querySelector("nav");
-            if (nav) {
-                nav.classList.toggle("hidden");
-            }
+        if (menuToggle) {
+            menuToggle.addEventListener("click", function () {
+                const nav = document.querySelector("nav");
+                    if (nav) {
+                        nav.classList.toggle("hidden");
+                    }
         });
     }
 </script>
