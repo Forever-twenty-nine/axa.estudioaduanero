@@ -1,5 +1,7 @@
 ---
 import { Image } from 'astro:assets';
+
+import { about } from "../data/data.ts"
 ---
 
 <section id="about" class="bg-background py-16">
@@ -7,7 +9,7 @@ import { Image } from 'astro:assets';
         <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
             <div class="mt-12 md:mt-0">
                 <Image 
-                    src="https://images.unsplash.com/photo-1531973576160-7125cd663d86"
+                    src={about.image}
                     alt="About us"
                     width={600}
                     height={400}
@@ -18,16 +20,16 @@ import { Image } from 'astro:assets';
             <div class="max-w-lg">
                 <!-- titulo -->
                 <h2 class="text-3xl font-extrabold text-text sm:text-4xl">
-                    Sobre Nosotros
+                    {about.title}
                 </h2>
                 <!-- descripcion -->
                 <p class="mt-4  text-lg text-text ">
-                    Con más de 20 años de experiencia, en AXA brindamos
-                    servicios aduaneros completos, asegurando que tu negocio
-                    cumpla con todas las normativas internacionales.
+                    {about.description}
                 </p>
+                <!-- buttom -->
                 <a href="#contact" class="mt-8 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-text bg-accent hover:bg-primary-dark">
-                    Contáctanos
+                    {about.button}
+                   
                 </a>
             </div>
         </div>

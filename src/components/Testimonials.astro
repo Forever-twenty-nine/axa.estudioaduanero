@@ -1,43 +1,14 @@
 ---
 import Testimonial from "./Testimonial.astro";
 
-import HeaderSection from "./HeaderSection.astro";
+import HeaderSection from "../shared/HeaderSection.astro";
 
-const header = {
-  title: "Lo que dicen nuestros clientes",
-  subtitle: "Testimonios",
-  description:
-    "Estos son algunos de los comentarios que nuestros clientes han compartido sobre su experiencia con nosotros.",
-};
-
-const testimonials = [
-  {
-    name: "Carlos Sánchez",
-    role: "Empresario",
-    message:
-      "Estoy muy contento con el servicio y los productos. La calidad es excelente y el precio inmejorable.",
-    image: "https://randomuser.me/api/portraits/men/1.jpg",
-  },
-  {
-    name: "María Gómez",
-    role: "Deportista",
-    message:
-      "El equipo de esta estudio es muy profesional. Recomiendo sus servicios al 100%.",
-    image: "https://randomuser.me/api/portraits/women/2.jpg",
-  },
-  {
-    name: "Luis Fernández",
-    role: "Entrenador personal",
-    message:
-      "El servicio al cliente es fantástico, y los productos son justo lo que buscaba para mi entrenamiento.",
-    image: "https://randomuser.me/api/portraits/men/3.jpg",
-  },
-];
+import { headerTestimonials, testimonials } from "../data/data.ts";
 ---
 
 <section id="testimonials"  class="relative overflow-hidden flex items-center justify-center pt-32 ">
   <div class="container py-4 mx-auto px-4 sm:px-6 lg:px-8">
-    <HeaderSection {...header} />
+    <HeaderSection {...headerTestimonials} />
     <div class="py-4 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center" >
       {testimonials.map((testimonial) => <Testimonial {...testimonial} />)}
     </div>

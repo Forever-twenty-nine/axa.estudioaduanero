@@ -1,40 +1,13 @@
 ---
-import HeaderSection from "./HeaderSection.astro";
+import HeaderSection from "../shared/HeaderSection.astro";
+
 import Question from "./question.astro";
 
-const question = [
-  {
-    question: "¿Cuánto tiempo toma el proceso de importación/exportación?",
-    answer:
-      "El tiempo de importación o exportación depende de factores como el tipo de mercancía y los requisitos del país de destino. Nuestro equipo agiliza el proceso para reducir el tiempo y garantizar que sus mercancías lleguen a tiempo.",
-    type: "text a",  
-  },
-    
-  {
-    question: "¿Cuál es el costo de los servicios de transporte aduanero?",
-    answer:
-      "El costo de los servicios de transporte aduanero varía según el tipo de mercancía, el destino y los requisitos aduaneros. Nuestro equipo le proporcionará un presupuesto detallado y transparente para sus necesidades de transporte aduanero.",
-    type: "text b",
-  },
-  {
-    question: "¿Qué documentos se requieren para el proceso de importación/exportación?",
-    answer:
-      "Los documentos necesarios para el proceso de importación/exportación varían según el tipo de mercancía y el país de destino. Nuestro equipo le guiará a través de los requisitos y le ayudará a recopilar la documentación necesaria para el proceso aduanero.",
-    type: "text a",
-  },
-];	
-
-const header = {
-  title: "Preguntas Frecuentes",
-  subtitle: "FAQ",
-  description:
-    "Encuentra respuestas a las preguntas más comunes sobre el proceso aduanero y cómo podemos ayudarte.",
-};
+import { headerFAQ, question } from "../data/data.ts";
 ---
-
 <section id="faq" class="relative overflow-hidden pt-32 flex items-center justify-center">
   <div class="container py-4 mx-auto px-4 sm:px-6 lg:px-8">
-      <HeaderSection {...header} />
+      <HeaderSection {...headerFAQ} />
     
       <div class="max-w-[50%] py-4 px-4 mx-auto">
        {
