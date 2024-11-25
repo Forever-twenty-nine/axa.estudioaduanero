@@ -6,10 +6,10 @@ import HeaderSection from "../shared/HeaderSection.astro";
 import { headerTestimonials, testimonials } from "../data/data.ts";
 ---
 
-<section id="testimonials"  class="relative overflow-hidden flex items-center justify-center pt-32 ">
+<section id="testimonials" class="relative overflow-hidden flex items-center justify-center pt-32">
   <div class="container py-4 mx-auto px-4 sm:px-6 lg:px-8">
     <HeaderSection {...headerTestimonials} />
-    <div class="py-4 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center" >
+    <div class="py-4 px-4 flex gap-4 justify-center">
       {testimonials.map((testimonial) => <Testimonial {...testimonial} />)}
     </div>
   </div>
