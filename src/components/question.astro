@@ -1,0 +1,63 @@
+---
+interface Props {
+    question: string;
+    answer: string;
+}
+const { question, answer } = Astro.props;
+---
+
+<div class="flex flex-row py-4 items-start mb-5">
+    <div
+        class="hidden sm:flex items-center justify-center p-3 mr-3 rounded-full bg-primary text-text border-2 border-text text-xl font-semibold"
+    >
+        <svg
+            width="30px"
+            fill="white"
+            height="30px"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <g data-name="Layer 2">
+                <g data-name="menu-arrow">
+                    <rect
+                        width="24"
+                        height="24"
+                        transform="rotate(180 12 12)"
+                        opacity="0"></rect>
+                    <path
+                        d="M17 9A5 5 0 0 0 7 9a1 1 0 0 0 2 0 3 3 0 1 1 3 3 1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-1.1A5 5 0 0 0 17 9z"
+                    ></path>
+                    <circle cx="12" cy="19" r="1"></circle>
+                </g>
+            </g>
+        </svg>
+    </div>
+    <div class="bg-primary p-4 px-10 w-full flex items-center rounded-3xl">
+        <h4 class="text-md leading-6 font-medium text-text">
+            {question}
+        </h4>
+    </div>
+</div>
+
+<div class="flex flex-row items-start">
+    <div class="bg-primary p-4 px-10 w-full flex items-center rounded-3xl">
+        <p class="text-text text-sm">
+            {answer}
+        </p>
+    </div>
+    <div
+        class="hidden sm:flex items-center justify-center p-3 ml-3 rounded-full bg-primary text-text border-2 border-text text-xl font-semibold"
+    >
+        <!-- Icono personalizado o mantenido el diseño SVG -->
+        <svg
+            height="25px"
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+        >
+            <path
+                d="M12 22c5.521 0 10-4.479 10-10s-4.479-10-10-10-10 4.479-10 10 4.479 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8zm-.5 13h1v-6h-1v6zm0-8h1v-2h-1v2z"
+            ></path>
+        </svg>
+    </div>
+</div>

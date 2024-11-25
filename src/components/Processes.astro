@@ -1,40 +1,13 @@
 ---
-import HeaderSection from "./HeaderSection.astro";
+import HeaderSection from "../shared/HeaderSection.astro";;
 
 import Process from "./Process.astro";
 
-const processes = [
-    {
-        title: "Consulta Inicial",
-        description:
-            "Realizamos una primera consulta para entender tus necesidades y evaluar las mejores opciones de aduana.",
-        number: "1",
-    },
-    {
-        title: "Documentación",
-        description:
-            "Te asistimos en la preparación y revisión de toda la documentación necesaria para tus trámites aduaneros.",
-        number: "2",
-    },
-    {
-        title: "Gestión y Seguimiento",
-        description:
-            "Nos encargamos de la gestión de los trámites y realizamos el seguimiento para asegurar el cumplimiento en cada etapa.",
-        number: "3",
-    },
-];
-
-const header = {
-    title: "Nuestro Proceso",
-    subtitle: "Cómo trabajamos",
-    description:
-        "Te acompañamos en cada etapa del proceso aduanero, desde la consulta inicial hasta la gestión y seguimiento de tus trámites.",
-};
+import { headerProcesses, processes } from "../data/data.ts";
 ---
-
-<section id="process" class="relative overflow-hidden p-4 flex items-center justify-center bg-background">
-    <div class="container py-4 mx-auto px-4 sm:px-6 lg:px-8 ">
-        <HeaderSection {...header}/>
+<section id="process" class="relative overflow-hidden pt-32 flex items-center justify-center ">
+    <div class="container  py-4 mx-auto px-4 sm:px-6 lg:px-8 ">
+        <HeaderSection {...headerProcesses}/>
         <div class="md:mt-0 py-12 pb-6 sm:py-16 lg:pb-24 overflow-hidden">
             <div class="relative lg:mt-20">
                 <div class="absolute inset-x-0 xl:px-44 top-2 md:block md:px-20 lg:px-28" >

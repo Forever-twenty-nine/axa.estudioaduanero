@@ -8,10 +8,12 @@ interface Link {
 const { links = [] }: { links?: Link[] } = Astro.props;
 ---
 
-<header class="sticky top-0 w-full z-10 py-4 pt-8 bg-background">
+<header class="sticky top-0 w-full z-10 py-4 pt-8">
     <div class="container mx-auto flex flex-wrap justify-between items-center bg-primary rounded-lg shadow-lg p-4 sm:p-6">
         <!-- Logo / Título -->
-        <h1 class="text-xl sm:text-2xl font-bold text-text">AXACOMEX</h1>
+         <a href="#top">
+            <h1 class="text-xl sm:text-2xl font-bold text-text">AXACOMEX</h1>
+         </a>
 
         <!-- Botón para menú hamburguesa en dispositivos móviles -->
         <div class="block sm:hidden">
@@ -40,14 +42,13 @@ const { links = [] }: { links?: Link[] } = Astro.props;
 </header>
 
 <script>
-    // Script para el botón hamburguesa en dispositivos móviles
     const menuToggle = document.getElementById("menu-toggle");
-    if (menuToggle) {
-        menuToggle.addEventListener("click", function () {
-            const nav = document.querySelector("nav");
-            if (nav) {
-                nav.classList.toggle("hidden");
-            }
+        if (menuToggle) {
+            menuToggle.addEventListener("click", function () {
+                const nav = document.querySelector("nav");
+                    if (nav) {
+                        nav.classList.toggle("hidden");
+                    }
         });
     }
 </script>
