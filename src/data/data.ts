@@ -4,7 +4,7 @@ export const hero = {
     description:
         " Nos especializamos en despacho aduanero, asesoría en comercio exterior, y gestión de documentación para que su empresa cumpla con todas las normativas y optimice sus costos de importación y exportación.",
     button: "Contáctanos",
-    image: "/src/assets/hero.webp",
+    image: "/hero.webp",
 };
 //#endregion Hero
 //#region About
@@ -28,19 +28,19 @@ export const services = [
         title: "Despacho Aduanero",
         description:
             "Nos ocupamos de todos los aspectos del despacho aduanero, asegurando  que sus mercancías cumplan con la normativa vigente y lleguen a destino sin retrasos ni inconvenientes.",
-        img: "/src/assets/1.webp",
+        img: "/1.webp",
     },
     {
         title: "Asesoramiento en Comercio Exterior",
         description:
             "Ofrecemos un asesoramiento integral en comercio exterior para optimizar sus procesos de importación y exportación, maximizando la eficiencia y reduciendo los costos operativos.",
-        img: "/src/assets/2.webp",
+        img: "/2.webp",
     },
     {
         title: "Gestión de Documentación",
         description:
             "Administramos y gestionamos toda la documentación necesaria, facilitando un proceso rápido y cumpliendo con los requisitos legales para importaciones y exportaciones.",
-        img: "/src/assets/3.webp",
+        img: "/3.webp",
     },
 ];
 //#endregion Service 
