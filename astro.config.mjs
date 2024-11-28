@@ -6,7 +6,7 @@ import compress from 'astro-compress';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://github.com/sebasechazu',
+  site: 'https://sebasechazu.github.io/axa.estudioaduanero',
   base: '/',
   integrations: [
     tailwind(),
