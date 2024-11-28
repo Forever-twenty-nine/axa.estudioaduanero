@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 interface Props {
     title: string;
     description: string;
@@ -8,28 +8,32 @@ interface Props {
 const { title, description, img } = Astro.props;
 ---
 
-<div class="max-w-sm bg-primary border border-secondary rounded-lg shadow items-center">
+<div
+    class="max-w-sm bg-primary border border-secondary rounded-lg shadow items-center"
+>
     <Image
-        src={img}
+        src={`${import.meta.env.BASE_URL}${img}`}
         alt={title}
         class="rounded-t-lg"
         loading="lazy"
         width="500"
         height="200"
-
     />
-    
+
     <div class="p-5">
         <a href="#contact">
-            <h5 class="mb-2 text-2xl font-bold h-16 tracking-tight text-text text-center">
+            <h5
+                class="mb-2 text-2xl font-bold h-16 tracking-tight text-text text-center"
+            >
                 {title}
             </h5>
         </a>
         <p class="mb-3 py-4 font-normal text-text">
             {description}
         </p>
-        <a  href="#contact"
-            class="inline-flex items-center  px-3 py-2 text-sm font-medium text-center text-text bg-primary rounded-lg hover:bg-accent focus:ring-4 focus:outline-none focus:accent "
+        <a
+            href="#contact"
+            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-text bg-primary rounded-lg hover:bg-accent focus:ring-4 focus:outline-none focus:accent"
         >
             Contáctanos
             <svg
