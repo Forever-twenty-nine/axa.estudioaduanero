@@ -6,8 +6,8 @@ import compress from 'astro-compress';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://sebasechazu.github.io/axa.estudioaduanero',
-  base: '/axa.estudioaduanero',
+  base: '/axa.estudioaduanero', // Para GitHub Pages
+  site: 'https://forever-twenty-nine.github.io/axa.estudioaduanero',
   integrations: [
     tailwind(),
     compress({
