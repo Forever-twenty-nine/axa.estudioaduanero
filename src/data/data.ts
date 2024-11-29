@@ -2,7 +2,7 @@
 export const hero = {
     title: "Servicios de Comercio Exterior",
     description:
-        " Nos especializamos en despacho aduanero, asesoría en comercio exterior, y gestión de documentación para que su empresa cumpla con todas las normativas y optimice sus costos de importación y exportación.",
+        "Nos especializamos en analisis de operaciones, contratacion de fletes, estimacion de costos y estrategias operativas de maquinaria Agricola, Vial, Industrial. En miras de la optimisacion de costos y la facilitacion de sus gestiones Administrativas",
     button: "Contáctanos",
     image: "/hero.webp",
 };
@@ -12,7 +12,7 @@ export const about = {
     image: "https://images.unsplash.com/photo-1531973576160-7125cd663d86",
     title: "Sobre Nosotros",
     description:
-        "Somos una empresa de comercio exterior con más de 10 años de experiencia en el mercado. Nuestro equipo de profesionales está comprometido en brindar un servicio de calidad y asesoramiento personalizado a cada uno de nuestros clientes.",
+        "Somos un Estudio Aduanero que desde hace mas de  10 años esta posicionado en el  mercado. Nuestro equipo de profesionales está comprometido en acompañar a empresas que requieran un area de Comercio Exterior en su staff siendo AxA Estudio Aduanero un jugador mas de su equipo pues entendemos a que se somenten al encarar esta maravillosa ...",
     button: "Contáctanos",
 };
 //#endregion About
@@ -21,7 +21,7 @@ export const headerServices = {
     title: "Servicios que ofrecemos",
     subtitle: "Nuestros Servicios",
     description:
-        "Ofrecemos una amplia gama de servicios de comercio exterior para satisfacer las necesidades de nuestros clientes.",
+        "Ofrecemos una amplia gama de servicios de orientados a satisfacer las necesidades de nuestros clientes.",
 };
 export const services = [
     {
@@ -37,11 +37,18 @@ export const services = [
         img: "/2.webp",
     },
     {
-        title: "Gestión de Documentación",
+        title: "Gestión Documental",
         description:
-            "Administramos y gestionamos toda la documentación necesaria, facilitando un proceso rápido y cumpliendo con los requisitos legales para importaciones y exportaciones.",
+            "Analizamos, controlamos y gestionamos toda la documentación que cada operación demanda, facilitando un proceso rápido,  cumpliendo con los requisitos legales y tecnicos para una operación rapida y sin sobre costos.",
         img: "/3.webp",
     },
+    {
+        title: "Logistica y Transporte Internacional",
+        description:
+            "Somos Agente de Transporte Aduanero y representamos a importantes Lineas de Transporte, tanto Terrestre como Maritimo con los cuales podemos asegurarle una tarifa a precio competitivo",
+        img: "/4.webp",
+    },
+    
 ];
 //#endregion Service 
 //#region Testimonials
@@ -57,21 +64,21 @@ export const testimonials = [
         name: "Carlos Sánchez",
         role: "Empresario",
         message:
-            "Estoy muy contento con el servicio y los productos. La calidad es excelente y el precio inmejorable.",
+            "Estoy muy contento con el trato, no me soltaron la mano en ningun momento, todo lo que previeron se cumplio y pude tener el costo de mis productos antes tenerlos en mi almacen.",
         image: "https://randomuser.me/api/portraits/men/1.jpg",
     },
     {
         name: "María Gómez",
-        role: "Deportista",
+        role: "Emprendedor",
         message:
-            "El equipo de esta estudio es muy profesional. Recomiendo sus servicios al 100%.",
+            "El equipo de esta estudio es muy profesional. Recomiendo sus servicios al 100%. Gracias a ellos pude tener mi mercaderia en tiempo y forma. Gracias por todo.",
         image: "https://randomuser.me/api/portraits/women/2.jpg",
     },
     {
         name: "Luis Fernández",
         role: "Entrenador personal",
         message:
-            "El servicio al cliente es fantástico, y los productos son justo lo que buscaba para mi entrenamiento.",
+            "El servicio al cliente es fantástico, son muy expeditivos y buscan solucionar todo lo que se presenta, la verdad unos Genios!!!. Gracias por todo.",
         image: "https://randomuser.me/api/portraits/men/3.jpg",
     },
 ];
@@ -115,20 +122,19 @@ export const question = [
     {
         question: "¿Cuánto tiempo toma el proceso de importación/exportación?",
         answer:
-            "El tiempo de importación o exportación depende de factores como el tipo de mercancía y los requisitos del país de destino. Nuestro equipo agiliza el proceso para reducir el tiempo y garantizar que sus mercancías lleguen a tiempo.",
+            "El tiempo de importación o exportación depende de factores como el tipo de mercancía y los requisitos del país de destino. Nuestro equipo trabaja al maximo para optimizar los procesos y garantizar que sus mercancías lleguen a tiempo.",
         type: "text a",
     },
-
     {
-        question: "¿Cuál es el costo de los servicios de transporte aduanero?",
+        question: "¿Cuáles son los costos a tener en cuenta?",
         answer:
-            "El costo de los servicios de transporte aduanero varía según el tipo de mercancía, el destino y los requisitos aduaneros. Nuestro equipo le proporcionará un presupuesto detallado y transparente para sus necesidades de transporte aduanero.",
+            "El costo de los servicios de transporte aduanero varía según el tipo de mercancía, el destino y los requisitos aduaneros. Nuestro equipo le proporcionará un presupuesto detallado y transparente para que puedas tener una vision completa del costo total de la operacion.",
         type: "text b",
     },
     {
         question: "¿Qué documentos se requieren para el proceso de importación/exportación?",
         answer:
-            "Los documentos necesarios para el proceso de importación/exportación varían según el tipo de mercancía y el país de destino. Nuestro equipo le guiará a través de los requisitos y le ayudará a recopilar la documentación necesaria para el proceso aduanero.",
+            "Los documentos necesarios para el proceso de importación/exportación varían según el tipo de mercancía y el país de destino. Nuestro equipo analiza cada caso, lo acompañara y se asegurara de que los requisitos sean cumplimentados, la documentación se encuentre en condiciones, nuestro mayor compromiso es que cada operacion sea exitosa.",
         type: "text a",
     },
 ];
