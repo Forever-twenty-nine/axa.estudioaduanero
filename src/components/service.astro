@@ -8,9 +8,21 @@ interface Props {
 const { title, description, img } = Astro.props;
 ---
 
-<div
-    class="max-w-sm bg-primary border border-secondary rounded-lg shadow items-center"
->
+<style>
+    .service-card {
+        max-width: 400px; /* Aumenta el ancho máximo */
+        margin: 1rem;
+    }
+    .service-card img {
+        object-fit: cover;
+        height: 150px; /* Reduce la altura de la imagen */
+    }
+    .service-card .content {
+        padding: 1rem;
+    }
+</style>
+
+<div  class="max-w-md bg-primary border border-secondary rounded-lg shadow-lg m-4">
     <Image
         src={`${import.meta.env.BASE_URL}${img}`}
         alt={title}
