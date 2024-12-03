@@ -8,7 +8,7 @@ interface Link {
 const { links = [] }: { links?: Link[] } = Astro.props;
 ---
 <header class="sticky top-0 w-full z-10 py-4 pt-8">
-    <div class="container mx-auto flex flex-wrap justify-between items-center bg-primary rounded-lg shadow-lg p-4 sm:p-6">
+    <div class="container mx-auto flex flex-wrap justify-between items-center bg-primary rounded-lg shadow-lg p-4 sm:px-6 sm:py-3">
         <!-- Logo / Título -->
          <a href="#top">
             <h1 class="text-xl sm:text-2xl font-bold text-text">AXACOMEX</h1>
@@ -23,41 +23,50 @@ const { links = [] }: { links?: Link[] } = Astro.props;
             </button>
         </div>
         <!-- Navegación -->
-        <nav class="hidden sm:flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 mt-4 sm:mt-0 w-full sm:w-auto">
-            <ul class="flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 mt-4 sm:mt-0 w-full sm:w-auto">
+        <nav 
+            id="mobile-menu" class="absolute left-0 top-full -mt-6 w-full max-h-0 overflow-hidden bg-primary rounded-b-lg transition-all duration-300 ease-in-out sm:static sm:flex sm:max-h-none sm:w-auto sm:opacity-100 sm:scale-100 sm:overflow-visible sm:mt-0 sm:min-h-[40px]"
+        >
+            <ul class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 w-full pt-6 pb-6 sm:pb-0 sm:pt-0 sm:w-auto sm:h-[40px]">
                 {links.map((link) => (
                     <li>
-                        <a href={link.href} class="text-text hover:text-accent transition duration-200">
+                        <a href={link.href} class=" px-4 py-1 inline-flex text-text hover:text-accent transition duration-200 sm:px-3 sm:py-2">
                             {link.text}
                         </a>
                     </li>
                 ))}
             </ul>
-        </nav>      
+        </nav>     
     </div>
 </header>
 
 <script>
     const menuToggle = document.getElementById("menu-toggle");
-    if (menuToggle) {
-        menuToggle.addEventListener("click", function () {
-            const nav = document.querySelector("nav");
-            if (nav) {
-                nav.classList.toggle("hidden");
-                nav.classList.toggle("flex");
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", () => {
+            const isOpen = menuToggle.getAttribute("aria-expanded") === "true"; 
+            menuToggle.setAttribute("aria-expanded", !isOpen ? "true" : "false"); 
+
+            if (isOpen) {
+                mobileMenu.style.maxHeight = `${mobileMenu.scrollHeight}px`; 
+                setTimeout(() => {
+                    mobileMenu.style.maxHeight = "0";
+                }, 10); 
+            } else {
+                mobileMenu.style.maxHeight = `${mobileMenu.scrollHeight}px`; 
+                setTimeout(() => {
+                    mobileMenu.style.maxHeight = "none"; 
+                }, 500); 
             }
+        });
+
+        const navLinks = document.querySelectorAll("nav a");
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                menuToggle.setAttribute("aria-expanded", "false");
+                mobileMenu.style.maxHeight = "0"; 
+            });
         });
     }
-
-    const navLinks = document.querySelectorAll("nav a");
-    navLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            const nav = document.querySelector("nav");
-            if (nav) {
-                nav.classList.add("hidden");
-                nav.classList.remove("flex");
-            }
-        });
-    });
 </script>
 
