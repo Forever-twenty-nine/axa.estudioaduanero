@@ -15,9 +15,13 @@ const {
     keywords = "estudio aduanero, despacho aduanero, comercio exterior, importación, exportación, agente de transporte aduanero, despachante de aduana, logística internacional, gestión documental, maquinaria agrícola, Argentina, Buenos Aires"
 } = Astro.props;
 
+const base = import.meta.env.BASE_URL;
 const siteUrl = "https://forever-twenty-nine.github.io/axa.estudioaduanero";
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 const socialImage = new URL(image, siteUrl);
+
+// Helper para rutas de assets públicos
+const asset = (path: string) => `${base}${path}`.replace(/\/+/g, '/').replace(/^\/$/, '/');
 ---
 <html lang="es" class="scroll-smooth">
     <head>
@@ -50,8 +54,8 @@ const socialImage = new URL(image, siteUrl);
         <meta property="twitter:image" content={socialImage} />
         
         <!-- Favicon -->
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/svg+xml" href={asset('/favicon.svg')} />
+        <link rel="apple-touch-icon" href={asset('/apple-touch-icon.png')} />
         
         <!-- Theme Color -->
         <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)" />
