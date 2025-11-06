@@ -6,58 +6,54 @@ interface Props {
 const { question, answer } = Astro.props;
 ---
 
-<div class="flex flex-row py-4 items-start mb-5">
-    <div
-        class="hidden sm:flex items-center justify-center p-3 mr-3 rounded-full bg-primary text-text border-2 border-text text-xl font-semibold"
-    >
-        <svg
-            width="30px"
-            fill="white"
-            height="30px"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <g data-name="Layer 2">
-                <g data-name="menu-arrow">
-                    <rect
-                        width="24"
-                        height="24"
-                        transform="rotate(180 12 12)"
-                        opacity="0"></rect>
-                    <path
-                        d="M17 9A5 5 0 0 0 7 9a1 1 0 0 0 2 0 3 3 0 1 1 3 3 1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-1.1A5 5 0 0 0 17 9z"
-                    ></path>
-                    <circle cx="12" cy="19" r="1"></circle>
-                </g>
-            </g>
-        </svg>
-    </div>
-    <div class="bg-primary p-4 px-10 w-full flex items-center rounded-3xl">
-        <h4 class="text-md leading-6 font-medium text-text">
-            {question}
-        </h4>
-    </div>
-</div>
+<details class="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300">
+    <summary class="flex items-center justify-between cursor-pointer p-6 lg:p-8 list-none">
+        <!-- Icono de pregunta -->
+        <div class="flex items-start gap-4 flex-1">
+            <div class="shrink-0 w-10 h-10 bg-linear-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center group-open:scale-110 transition-transform duration-300">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 4C9.243 4 7 6.243 7 9h2c0-1.654 1.346-3 3-3s3 1.346 3 3c0 1.069-.454 1.465-1.481 2.255-.382.294-.813.626-1.226 1.038C10.981 13.604 10.995 14.897 11 15v2h2v-2.009c0-.024.023-.601.707-1.284.32-.32.682-.598 1.031-.867C15.798 12.024 17 11.1 17 9c0-2.757-2.243-5-5-5zm-1 14h2v2h-2z"/>
+                </svg>
+            </div>
 
-<div class="flex flex-row items-start">
-    <div class="bg-primary p-4 px-10 w-full flex items-center rounded-3xl">
-        <p class="text-text text-sm">
-            {answer}
-        </p>
+            <!-- Pregunta -->
+            <h3 class="flex-1 text-base lg:text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                {question}
+            </h3>
+        </div>
+
+        <!-- Icono de expand/collapse -->
+        <div class="shrink-0 ml-4">
+            <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 group-hover:bg-blue-50 dark:group-hover:bg-blue-950 transition-colors duration-300">
+                <svg 
+                    class="w-5 h-5 text-gray-600 dark:text-gray-400 group-open:rotate-180 transition-transform duration-300" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </div>
+        </div>
+    </summary>
+
+    <!-- Respuesta -->
+    <div class="px-6 lg:px-8 pb-6 lg:pb-8">
+        <div class="pl-14 border-l-4 border-blue-500 dark:border-blue-400">
+            <div class="pl-4 flex items-start gap-3">
+                <!-- Icono de respuesta -->
+                <div class="shrink-0 w-8 h-8 bg-green-100 dark:bg-green-950 rounded-lg flex items-center justify-center mt-1">
+                    <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                        <path d="M9.999 13.587 7.7 11.292l-1.412 1.416 3.713 3.705 6.706-6.706-1.414-1.414z"/>
+                    </svg>
+                </div>
+
+                <!-- Texto de la respuesta -->
+                <p class="flex-1 text-sm lg:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                    {answer}
+                </p>
+            </div>
+        </div>
     </div>
-    <div
-        class="hidden sm:flex items-center justify-center p-3 ml-3 rounded-full bg-primary text-text border-2 border-text text-xl font-semibold"
-    >
-        <!-- Icono personalizado o mantenido el diseño SVG -->
-        <svg
-            height="25px"
-            fill="white"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-        >
-            <path
-                d="M12 22c5.521 0 10-4.479 10-10s-4.479-10-10-10-10 4.479-10 10 4.479 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8zm-.5 13h1v-6h-1v6zm0-8h1v-2h-1v2z"
-            ></path>
-        </svg>
-    </div>
-</div>
+</details>

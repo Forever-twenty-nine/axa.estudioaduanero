@@ -1,34 +1,63 @@
 ---
-import HeaderSection from "../shared/HeaderSection.astro";;
-
+import HeaderSection from "../shared/HeaderSection.astro";
 import Process from "./Process.astro";
-
-import { headerProcesses, processes } from "../data/data.ts";
+import { headerProcesses, processes } from "../data/data";
 ---
-<section id="process" class="relative overflow-hidden pt-32 flex items-center justify-center ">
-    <div class="container  py-4 mx-auto px-4 sm:px-6 lg:px-8 ">
+
+<section id="process" class="relative overflow-hidden py-16 lg:py-24 bg-gray-50 dark:bg-gray-900">
+    <!-- Elementos decorativos de fondo -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <!-- Orbes de gradiente -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 dark:bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-3xl"></div>
+        
+        <!-- Patrón de puntos -->
+        <div class="absolute inset-0 opacity-20 dark:opacity-10" style="background-image: radial-gradient(circle, #9333ea 1px, transparent 1px); background-size: 24px 24px;"></div>
+    </div>
+
+    <div class="container relative mx-auto px-4 sm:px-6 lg:px-8">
         <HeaderSection {...headerProcesses}/>
-        <div class="md:mt-0 py-12 pb-6 sm:py-16 lg:pb-24 overflow-hidden">
-            <div class="relative lg:mt-20">
-                <div class="absolute inset-x-0 xl:px-44 top-2 md:block md:px-20 lg:px-28" >
+        
+        <div class="mt-12 lg:mt-16">
+            <!-- Línea de conexión animada entre los pasos -->
+            <div class="relative">
+                <!-- Línea conectora para desktop -->
+                <div class="hidden md:block absolute inset-x-0 top-8 px-20 lg:px-32">
                     <svg
-                        class="w-full"
+                        class="w-full h-12"
                         xmlns="http://www.w3.org/2000/svg"
-                        width="875"
-                        height="48"
                         viewBox="0 0 875 48"
                         fill="none"
+                        preserveAspectRatio="none"
                     >
                         <path
                             d="M2 29C20.2154 33.6961 38.9915 35.1324 57.6111 37.5555C80.2065 40.496 102.791 43.3231 125.556 44.5555C163.184 46.5927 201.26 45 238.944 45C312.75 45 385.368 30.7371 458.278 20.6666C495.231 15.5627 532.399 11.6429 569.278 6.11109C589.515 3.07551 609.767 2.09927 630.222 1.99998C655.606 1.87676 681.208 1.11809 706.556 2.44442C739.552 4.17096 772.539 6.75565 805.222 11.5C828 14.8064 850.34 20.2233 873 24"
-                            stroke="#4A5568"
-                            stroke-width="3"
+                            stroke="url(#gradient)"
+                            stroke-width="2"
                             stroke-linecap="round"
-                            stroke-dasharray="1 12"></path>
+                            stroke-dasharray="4 8"
+                            class="animate-dash"
+                        />
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
                     </svg>
                 </div>
-                <div class="relative grid grid-cols-1 text-center gap-y-8 sm:gap-y-10 md:gap-y-12 md:grid-cols-3 gap-x-12">
-                    {processes.map((process) => <Process {...process} />)}
+
+                <!-- Grid de procesos -->
+                <div class="relative grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                    {processes.map((process, index) => (
+                        <div 
+                            class="fade-in-up" 
+                            style={`animation-delay: ${index * 0.2}s`}
+                        >
+                            <Process {...process} />
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

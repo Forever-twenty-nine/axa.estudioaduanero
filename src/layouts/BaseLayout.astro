@@ -1,13 +1,117 @@
 ---
 import "../styles/global.css";
 
-const { title } = Astro.props;
+interface Props {
+    title?: string;
+    description?: string;
+    image?: string;
+    keywords?: string;
+}
+
+const {
+    title = "AxA Estudio Aduanero - Servicios de Comercio Exterior en Argentina",
+    description = "Estudio aduanero con más de 10 años de experiencia en despacho aduanero, asesoramiento en comercio exterior, gestión documental y logística internacional. Especialistas en importación y exportación de maquinaria agrícola, vial e industrial.",
+    image = "/hero.webp",
+    keywords = "estudio aduanero, despacho aduanero, comercio exterior, importación, exportación, agente de transporte aduanero, despachante de aduana, logística internacional, gestión documental, maquinaria agrícola, Argentina, Buenos Aires"
+} = Astro.props;
+
+const siteUrl = "https://forever-twenty-nine.github.io/axa.estudioaduanero";
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const socialImage = new URL(image, siteUrl);
 ---
-<html lang="es" class=" scroll-smooth">
+<html lang="es" class="scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <!-- Primary Meta Tags -->
         <title>{title}</title>
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta name="author" content="AxA Estudio Aduanero" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalURL} />
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={socialImage} />
+        <meta property="og:locale" content="es_AR" />
+        <meta property="og:site_name" content="AxA Estudio Aduanero" />
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={canonicalURL} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={socialImage} />
+        
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        
+        <!-- Theme Color -->
+        <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#1e40af" media="(prefers-color-scheme: dark)" />
+        
+        <!-- Geo Tags -->
+        <meta name="geo.region" content="AR-C" />
+        <meta name="geo.placename" content="Buenos Aires" />
+        <meta name="geo.position" content="-34.603722;-58.381592" />
+        <meta name="ICBM" content="-34.603722, -58.381592" />
+        
+        <!-- Business/Contact Info -->
+        <meta name="contact" content="alberto.aldabe@axacomex.com.ar" />
+        <meta name="coverage" content="Argentina" />
+        <meta name="distribution" content="global" />
+        <meta name="rating" content="general" />
+        
+        <!-- Structured Data - Local Business -->
+        <script type="application/ld+json" is:inline>
+        {
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "AxA Estudio Aduanero",
+            "description": "Estudio aduanero especializado en servicios de comercio exterior, despacho aduanero y logística internacional",
+            "url": "https://forever-twenty-nine.github.io/axa.estudioaduanero",
+            "telephone": "+54-011-45237962",
+            "email": "alberto.aldabe@axacomex.com.ar",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Bolivar 382 6to piso - Oficina 23",
+                "addressLocality": "Buenos Aires",
+                "addressRegion": "CABA",
+                "postalCode": "1066",
+                "addressCountry": "AR"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "-34.603722",
+                "longitude": "-58.381592"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "09:00",
+                    "closes": "20:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Saturday",
+                    "opens": "10:00",
+                    "closes": "18:00"
+                }
+            ],
+            "priceRange": "$$",
+            "sameAs": [
+                "https://wa.me/5401145237962"
+            ]
+        }
+        </script>
     </head>
     <body id="top">
         <slot />

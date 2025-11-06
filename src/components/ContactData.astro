@@ -3,28 +3,62 @@ interface Props {
     icon: string;
     title: string;
     description: string;
-    
 }
 
 const { icon, title, description } = Astro.props;
 ---
-<div class="bg-primary p-4 rounded-xl flex flex-col items-center">
-    <div class="flex items-center justify-center h-12 w-12 mx-auto rounded-full bg-accent text-text">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6"
-        >
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d={icon}
-            ></path>
-        </svg>
+
+<a
+    href="#"
+    class="group block relative bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+>
+    <!-- Efecto de brillo en hover -->
+    <div class="absolute inset-0 bg-linear-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 dark:group-hover:from-blue-500/10 dark:group-hover:to-purple-500/10 transition-all duration-300"></div>
+
+    <div class="relative flex flex-col items-center text-center">
+        <!-- Icono -->
+        <div class="relative mb-4">
+            <!-- Anillo de fondo animado -->
+            <div class="absolute inset-0 bg-blue-500/20 dark:bg-blue-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+            
+            <!-- Contenedor del icono -->
+            <div class="relative flex items-center justify-center w-14 h-14 bg-linear-to-br from-blue-500 to-purple-500 rounded-2xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="w-7 h-7 text-white"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d={icon}
+                    ></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+            {title}
+        </h3>
+
+        <!-- Descripción -->
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            {description}
+        </p>
+
+        <!-- Flecha indicadora -->
+        <div class="mt-4 flex items-center gap-2 text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-sm font-medium">Contactar</span>
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </div>
     </div>
-    <h3 class="mt-4 text-lg leading-6 font-medium text-text">{title}</h3>
-    <p class="mt-2 text-base text-text text-center">{description}</p>
-</div>
+
+    <!-- Borde decorativo que crece en hover -->
+    <div class="absolute bottom-0 left-0 w-0 h-1 bg-linear-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500"></div>
+</a>

@@ -8,36 +8,26 @@ interface Props {
 const { name, role, message, image } = Astro.props;
 ---
 
-<article class="group relative h-full flex flex-col bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-300 p-6 lg:p-8">
-    <!-- Icono de comillas decorativo -->
-    <div class="absolute -top-4 -left-4 w-16 h-16 bg-linear-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+<article class="group h-full flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 lg:p-8 hover:shadow-xl transition-all duration-300">
+    <!-- Comillas decorativas -->
+    <div class="mb-6">
+        <svg class="w-10 h-10 text-blue-500 dark:text-blue-400 opacity-50" fill="currentColor" viewBox="0 0 24 24">
             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
         </svg>
     </div>
 
-    <!-- Estrellas de calificación -->
-    <div class="flex items-center gap-1 mb-4">
-        {Array.from({ length: 5 }).map(() => (
-            <svg class="w-5 h-5 text-yellow-500 dark:text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.392 2.46a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.392-2.46a1 1 0 00-1.176 0l-3.392 2.46c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.045 9.397c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.97z"/>
-            </svg>
-        ))}
-    </div>
-
-    <!-- Mensaje del testimonio -->
+    <!-- Mensaje -->
     <blockquote class="flex-1 mb-6">
-        <p class="text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed italic">
-            "{message}"
+        <p class="text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            {message}
         </p>
     </blockquote>
 
     <!-- Información del cliente -->
-    <div class="flex items-center gap-4 pt-6 border-t border-gray-200 dark:border-gray-700">
+    <div class="flex items-center gap-4 pt-6 border-t border-gray-300 dark:border-gray-700">
         <!-- Avatar -->
         <div class="relative shrink-0">
-            <div class="absolute inset-0 bg-linear-to-br from-blue-500 to-purple-500 rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div class="relative w-12 h-12 lg:w-14 lg:h-14 rounded-full overflow-hidden ring-2 ring-white dark:ring-gray-800 bg-gray-100 dark:bg-gray-700">
+            <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-blue-500 dark:border-blue-400 bg-gray-200 dark:bg-gray-700">
                 <img
                     src={image}
                     alt={`Foto de ${name}`}
@@ -59,16 +49,13 @@ const { name, role, message, image } = Astro.props;
             </p>
         </div>
 
-        <!-- Icono verificado -->
-        <div class="shrink-0">
-            <div class="w-8 h-8 bg-green-100 dark:bg-green-950 rounded-full flex items-center justify-center border border-green-200 dark:border-green-800">
-                <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        <!-- Estrellas de calificación -->
+        <div class="flex gap-1">
+            {Array.from({ length: 5 }).map(() => (
+                <svg class="w-5 h-5 text-yellow-500 dark:text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.392 2.46a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.392-2.46a1 1 0 00-1.176 0l-3.392 2.46c-.784.57-1.838-.197-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.045 9.397c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.97z"/>
                 </svg>
-            </div>
+            ))}
         </div>
     </div>
-
-    <!-- Efecto de brillo en hover -->
-    <div class="absolute inset-0 bg-linear-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 dark:group-hover:from-blue-500/10 dark:group-hover:to-purple-500/10 rounded-2xl transition-all duration-300 pointer-events-none"></div>
 </article>
